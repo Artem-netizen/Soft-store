@@ -1,4 +1,9 @@
 .products
+    &-top
+        padding-top: 44px
+        margin-bottom: 16px
+        @include flex(flex, space-between, center, nowrap)
+
     &-grid
         margin-bottom: 16px
         @include grid(32px, repeat(auto-fill, minmax(280px, 1fr)))

@@ -1,0 +1,16 @@
+.page-error
+    position: absolute
+    top: 50%
+    left: 50%
+    text-align: center
+    flex-direction: column
+    width: min(462px, 100%)
+    transform: translate(-50%, -50%)
+    @include flex(flex, start, center, nowrap)
+    &__title
+        margin-bottom: 16px
+
+    p
+        margin-bottom: 33px
+        color: $theme-dark-color
+        @include font(18px, 400, 150%)

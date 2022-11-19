@@ -101,6 +101,34 @@ const swiper2 = new Swiper('.categories-slider-wrap', {
     },
 });
 
+// dropdown
+document.querySelectorAll('.dropdown').forEach(function (selectDropdown) {
+
+    let selectBtn = selectDropdown.querySelector('.dropdown__btn');
+    let selectChangeBtn = selectDropdown.querySelector('.dropdown__list');
+    let selectSubItem = selectChangeBtn.querySelectorAll('.dropdown__list li');
+
+    selectBtn.addEventListener('click', function () {
+        selectChangeBtn.classList.toggle('open');
+        selectBtn.classList.toggle('open');
+    })
+
+    selectSubItem.forEach(function (listItem) {
+        listItem.addEventListener('click', function (e) {
+            e.stopPropagation();
+            selectBtn.innerText = this.innerText;
+            selectChangeBtn.classList.remove('open');
+        })
+    })
+
+    document.addEventListener('click', function (e) {
+        if (e.target !== selectBtn) {
+            selectChangeBtn.classList.remove('open');
+            selectBtn.classList.remove('open');
+        }
+    })
+})
+
 //cookie
 const cookie = document.querySelector('.cookie')
 const cookieBtns = document.querySelectorAll('.click');
