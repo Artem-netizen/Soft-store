@@ -1,0 +1,173 @@
+html
+    &.stop-scrolling
+        overflow: hidden
+        height: 100%
+
+    &.start-scrolling
+        overflow-y: scroll
+
+html,
+body
+    height: 100%
+    scroll-behavior: smooth
+
+body
+    font-size: 16px
+    font-weight: normal
+    font-family: 'Cera Pro'
+    background: $theme-white-color
+    &.stop-scrolling
+        overflow: hidden
+        height: 100%
+
+//прижатие футера
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
+
+.content
+    flex: 1 0 auto
+
+footer
+    flex: 0 0 auto
+//
+
+//container
+.container
+    margin: 0 auto
+    padding: 0 15px
+    max-width: 1334px
+    width: 100%
+    &-header
+        margin: 0 auto
+        padding: 0 24px
+        max-width: 1452px
+        width: 100%
+//
+
+.main
+    padding-top: 120px
+
+.center
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+
+.logo
+    max-width: 192px
+    width: 100%
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+//типографика
+.heading
+    font-size: 44px
+    font-weight: 700
+    line-height: 130%
+    color: $theme-dark-color
+
+
+.title
+    font-size: 32px
+    font-weight: 700
+    line-height: 130%
+    color: $theme-dark-color
+
+.subtitle
+    font-size: 18px
+    font-weight: 700
+    line-height: 24px
+    color: $theme-dark-color
+
+//buttons on pages
+.btn
+    position: relative
+    padding: 20px 32px
+    transition: .3s
+    font-size: 16px
+    font-weight: 500
+    line-height: 16px
+    overflow: hidden
+    width: fit-content
+    text-align: center
+    white-space: nowrap
+    will-change: tranform
+    align-items: center
+    display: inline-flex
+    justify-content: center
+    color: $theme-white-color
+    border-radius: $radius100
+    z-index: 1
+
+    //loading
+    & > .loading
+        margin-right: 8px
+        display: none
+
+    //catalog
+    &-catalog
+        &::after,
+        &::before
+            border-radius: $radius100
+            background-image: $primary-gradient
+
+        &::after
+            opacity: 0
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(120.9deg, #2029F9 34.15%, #7F20F9 68.94%)
+
+        &:hover
+            &::after
+                opacity: 1
+
+        &:focus
+            &::before
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(120.9deg, #2029F9 34.15%, #7F20F9 68.94%)
+
+        &[disabled]
+            cursor: not-allowed
+            -webkit-touch-callout: none
+            &::after,
+            &::before
+                background: $theme-grey-color
+
+    &-more
+        border-radius: $radius44
+        color: $theme-primary-color
+        background: $theme-lightblue-grey-color
+
+        &-mini
+            padding-top: 14px
+            padding-bottom: 14px
+
+        &:hover
+            color: $theme-white-color
+            background: $theme-primary-color
+
+        &:focus
+            color: $theme-white-color
+            background: $theme-primary-dark-color
+
+        &[disabled]
+            cursor: not-allowed
+            color: $theme-white-color
+            background: $theme-light-grey-color
+
+    //для всех кнопок с классом btn
+    &::after,
+    &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: -1
+        transition: .3s
+
+.dropdown
+

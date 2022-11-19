@@ -1,0 +1,140 @@
+.menu
+    //position: relative
+
+    &__btn
+        padding: 15px
+        overflow: hidden
+        font-size: 15px
+        font-weight: 500
+        line-height: 15px
+        color: $theme-dark-color
+        border-radius: $radius42
+        @include flex(flex, center, center, nowrap)
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(120.9deg, #2029F9 34.15%, #7F20F9 68.94%)
+
+        span
+            margin-right: 15px
+            position: relative
+            display: block
+            width: 20px
+            height: 2px
+            border-radius: $radius4
+            background: $primary-gradient
+            &::after,
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                width: 100%
+                transition: .2s
+                height: inherit
+                border-radius: inherit
+                background: $primary-gradient
+
+            &::after
+                top: -6px
+
+            &::before
+                top: 6px
+
+        &.show
+            span
+                background: $theme-white-color
+                &::after,
+                &::before
+                    top: 0
+
+                &::after
+                    transform: rotate(45deg)
+
+                &::before
+                    transform: rotate(-45deg)
+
+
+    &-wrap
+        padding: 32px 0
+        position: fixed
+        left: 0
+        top: 72px
+        z-index: 4
+        width: 100%
+        opacity: 0
+        transition: .3s
+        pointer-events: none
+        transform: translateY(50px)
+        background: $theme-white-color
+        box-shadow: 0 18px 20px rgba(0, 0, 0, 0.1)
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            height: 1px
+            width: 80.5%
+            opacity: 0.2
+            background: $theme-dark-color
+
+        &.show
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0px)
+
+    &-container
+        margin: 0 auto
+        padding: 0 24px
+        max-width: 1282px
+        width: 100%
+
+    &__list
+        @include flex(flex, space-between, flex-start, nowrap)
+
+        &-links
+            margin-top: 38px
+            display: flex
+            flex-direction: column
+            li
+                margin-bottom: 16px
+                &:last-child
+                    margin-bottom: 0
+            a
+                display: inline-block
+                transition: .3s
+                font-size: 16px
+                font-weight: 400
+                line-height: 24px
+                color: $theme-dark-color
+                &:hover
+                    color: $theme-primary-color
+
+    &__item
+        margin-right: 24px
+        display: flex
+        flex-direction: column
+        width: calc(100% / 6)
+        &:last-child
+            margin-right: 0
+
+
+.divide__img
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: -1
+
+.divide__content
+    position: absolute
+    top: 50%
+    left: 16px
+    transform: translateY(-50%)
+    h2
+        margin-bottom: 4px
+        font-size: 18px
+        font-weight: 700
+        line-height: 24px
+        color: $theme-dark-blue-color
+
+    p
+        font-size: 14px
+        font-weight: 400
+        line-height: 14px
+        color: $theme-dark-grey-color

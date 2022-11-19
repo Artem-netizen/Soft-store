@@ -1,0 +1,97 @@
+.card
+    padding: 24px 24px 30px
+    position: relative
+    width: 100%
+    height: 100%
+    display: flex
+    transition: .3s
+    flex-direction: column
+    border-radius: $radius8
+    background: $theme-white-color
+    &.new
+        &::after,
+        &::before
+            padding: 5px 9px
+            position: absolute
+            top: 24px
+            left: 24px
+            font-size: 12px
+            font-weight: 400
+            line-height: 14px
+            border-radius: $radius4
+            @include flex(flex, center, center, nowrap)
+
+        &::before
+            content: 'Новинка'
+            color: $theme-white-color
+            background: $theme-green-color
+
+    &__img
+        margin: 0 auto 16px
+        width: 100%
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__content,
+    &__desc
+        display: flex
+        flex-direction: column
+
+    &__title
+        margin-bottom: 12px
+        font-size: 18px
+        font-weight: 700
+        line-height: 24px
+        color: $theme-dark-color
+
+    &__desc
+        margin-bottom: 20px
+
+    &__info
+        margin-bottom: 4px
+        @include flex(flex, start, center, nowrap)
+        &:last-child
+            margin-bottom: 0
+
+        &-title,
+        &-text
+            font-size: 14px
+            font-weight: 400
+            line-height: 20px
+
+        &-title
+            padding-right: 8px
+            color: $theme-grey-color
+
+        &-text
+            color: $theme-dark-color
+
+    &-bottom
+        width: 100%
+        @include flex(flex, space-between, center, nowrap)
+        //& *
+        //    flex: 1 0 50%
+
+    &-price
+        margin-right: 25px
+        font-size: 24px
+        font-weight: 700
+        line-height: 32px
+        color: $theme-dark-color
+
+    &__btn
+        flex: 1
+        padding: 14px 0
+        opacity: 0
+        pointer-events: none
+        transform: translateX(10px)
+
+    // hover
+    &:hover
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15)
+        .card__btn
+            opacity: 1
+            pointer-events: all
+            transform: translateX(0)

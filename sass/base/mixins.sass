@@ -1,0 +1,18 @@
+//flex
+@mixin flex($flex, $jcsb, $items, $wrap)
+    display: $flex
+    flex-wrap: $wrap
+    align-items: $items
+    justify-content: $jcsb
+
+//grid
+@mixin grid($gap, $gtc)
+    gap: $gap
+    display: grid
+    grid-template-columns: $gtc
+
+//font
+@mixin font($size, $weight, $line-height)
+    font-size: $size
+    font-weight: $weight
+    line-height: $line-height

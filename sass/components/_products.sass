@@ -1,0 +1,9 @@
+.products
+    &-grid
+        margin-bottom: 16px
+        @include grid(32px, repeat(auto-fill, minmax(280px, 1fr)))
+        &.tabs__content
+            display: none
+            &.--active
+                display: grid
+                transform: translateY(0%)

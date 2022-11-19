@@ -1,0 +1,68 @@
+.cookie
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 5
+    width: 100%
+    height: 100%
+    transition: .5s
+    backdrop-filter: blur(20px)
+    background: rgba(247, 247, 247, 0.4)
+
+    &.hide
+        opacity: 0
+        pointer-events: none
+        transform: scale(1.4)
+
+    &-inner
+        padding: 16px 16px 24px 24px
+        position: fixed
+        top: 50%
+        left: 50%
+        bottom: 35px
+        width: 100%
+        max-width: 453px
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        height: fit-content
+        border-radius: $radius16
+        background: $theme-white-color
+        transform: translate(-50%,-50%)
+        box-shadow: 0 16px 24px rgba(0, 0, 0, 0.15)
+
+    &-top
+        margin-bottom: 25px
+        @include flex(flex, space-between, center, nowrap)
+
+    &__title
+        font-size: 24px
+        font-weight: 700
+        line-height: 32px
+        color: $theme-dark-color
+
+    &__btn
+        font-size: 0
+        & *
+            transition: .3s
+        &:hover
+            path
+                fill: $theme-grey-color
+
+    &__content
+        display: flex
+        flex-direction: column
+
+    &__text
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $theme-dark-grey-color
+
+    &__buttons
+        margin-top: 24px
+        @include flex(flex, start, center, nowrap)
+        button
+            margin-right: 55px
+            &:last-child
+                margin-right: 0

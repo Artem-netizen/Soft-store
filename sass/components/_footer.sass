@@ -1,0 +1,123 @@
+.footer
+    padding-top: 24px
+    padding-bottom: 14px
+    background: $theme-light-grey-color
+
+    &-top
+        padding-bottom: 24px
+        gap: 24px
+        border-bottom: 1px solid rgba(26, 25, 28, 0.1)
+        @include flex(flex, space-between, flex-start, nowrap)
+
+    &__item
+        display: flex
+        flex-direction: column
+        //width: calc(100% / 6.5)
+        &-subtitle
+            margin-bottom: 8px
+
+    &-nav
+        display: flex
+        flex-direction: column
+        li
+            margin-bottom: 6px
+            &:last-child
+                margin-bottom: 0
+
+        &__link
+            display: inline-block
+            transition: .3s
+            font-size: 14px
+            font-weight: 400
+            line-height: 20px
+            color: $theme-dark-grey-color
+            &:hover
+                color: $theme-dark-color
+
+    &-social
+        @include flex(flex, start, flex-start, nowrap)
+        li
+            margin-right: 8px
+            margin-bottom: 0
+            &:last-child
+                margin-right: 0
+
+    &-info
+        display: flex
+        flex-direction: column
+        li
+            margin-bottom: 8px
+            display: flex
+            flex-direction: column
+            &:last-child
+                margin-bottom: 0
+
+        &__link
+            display: inline-block
+            font-size: 14px
+            font-weight: 400
+            line-height: 20px
+            color: $theme-primary-color
+            text-decoration-line: underline
+            &:hover
+                text-decoration-line: none
+
+    // bottom
+    &-bottom
+        padding-top: 14px
+        @include flex(flex, space-between, center, nowrap)
+
+    &-copy,
+    &-policy,
+    &-payments
+        @include flex(flex, start, center, nowrap)
+
+    &-copy__txt
+        font-size: 12px
+        font-weight: 400
+        line-height: 14px
+        color: $theme-grey-color
+
+    &-logo
+        margin-right: 16px
+        max-width: 115px
+        width: 100%
+        img
+            width: 100%
+            height: auto
+
+    &-policy
+        a
+            display: inline-block
+            margin-right: 23px
+            &:last-child
+                margin-right: 0
+
+    &-payments
+        &-inner
+            margin-left: 35px
+            @include flex(flex, start, center, nowrap)
+
+        &__img
+            margin-right: 16px
+            position: relative
+            &:last-child
+                margin-right: 0
+
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                mix-blend-mode: saturation
+                background: $theme-dark-color
+
+    &-small__txt
+        font-size: 12px
+        font-weight: 400
+        line-height: 14px
+        color: $theme-dark-grey-color
+        span
+            display: block
